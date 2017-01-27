@@ -911,13 +911,13 @@ namespace Mvc5Project.Controllers
         }
         public static int UpdateEmailLinkDate(string username)
         {
-            command = "UPDATE AspNetUsers SET EmailLinkDate = '" + DateTime.Now + "' WHERE UserName = @UserName";
+            command = "UPDATE AspNetUsers SET EmailLinkDate = GETDATE() WHERE UserName = @UserName";
             parameterName = "@UserName";
             return UpdateDatabase(username);
         }
         public static int UpdateLastLoginDate(string username)
         {
-            command = "UPDATE AspNetUsers SET LastLoginDate = '" + DateTime.Now + "' WHERE UserName = @UserName";
+            command = "UPDATE AspNetUsers SET LastLoginDate = GETDATE() WHERE UserName = @UserName";
             parameterName = "@UserName";
             return UpdateDatabase(username);
         }
